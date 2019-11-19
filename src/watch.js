@@ -36,7 +36,7 @@ function watch (paths = [], options = {}, callback = () => {}) {
   }
 
   options.events.forEach(event => {
-    if (['add', 'change', 'unlink', 'addDir', 'unlinkDir' ].contains(event)) {
+    if (['add', 'change', 'unlink', 'addDir', 'unlinkDir'].contains(event)) {
       watcher.on(event, path => onChange(event, path, null, null))
     } else if (event === 'change') {
       watcher.on(event, (path, stats) => onChange(event, path, stats, null))
@@ -45,7 +45,7 @@ function watch (paths = [], options = {}, callback = () => {}) {
     } else if (event === 'ready') {
       watcher.on(event, () => onChange(event, '', null, null))
     } else if (event === 'raw') {
-      watcher.on(event, (event, path, details) => onChange(event, path, details, null)
+      watcher.on(event, (event, path, details) => onChange(event, path, details, null))
     }
   })
 
