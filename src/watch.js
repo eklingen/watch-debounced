@@ -41,7 +41,7 @@ function watch (paths = [], options = {}, callback = () => {}) {
     } else if (event === 'change') {
       watcher.on(event, (path, stats) => onChange(event, path, stats, null))
     } else if (event === 'error') {
-      watcher.on(event, error => onChange(event, '', null, error)
+      watcher.on(event, error => onChange(event, '', null, error))
     } else if (event === 'ready') {
       watcher.on(event, () => onChange(event, '', null, null))
     } else if (event === 'raw') {
