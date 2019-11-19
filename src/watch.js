@@ -36,7 +36,7 @@ function watch (paths = [], options = {}, callback = () => {}) {
   }
 
   options.events.forEach(event => {
-    if (['add', 'change', 'unlink', 'addDir', 'unlinkDir'].contains(event)) {
+    if (['add', 'change', 'unlink', 'addDir', 'unlinkDir'].indexOf(event) !== -1) {
       watcher.on(event, path => onChange(event, path, null, null))
     } else if (event === 'change') {
       watcher.on(event, (path, stats) => onChange(event, path, stats, null))
