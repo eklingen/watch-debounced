@@ -1,5 +1,5 @@
 
-# Simple debounced file watcher.
+# Simple debounced file watcher
 
 Simple debounced file watcher. Uses Chokidar. This does not queue events, it simply rate limits them.
 
@@ -13,7 +13,7 @@ Simple debounced file watcher. Uses Chokidar. This does not queue events, it sim
 
 Specify either a folder or a glob. You can specify options or an empty object. It returns the `chokidar` instance, so you can close it at a later time.
 
-```
+```javascript
 const watch = require('@eklingen/watch-debounced')
 const watcher = watch('folder-or-glob/**/*', {}, (event, path) => yourCallback(event, path))
 ...
@@ -41,7 +41,7 @@ There are a few options.
 
 Set a delay in millisecond before the timeout resets. Default is `250`.
 
-```
+```javascript
 watch('my-stuff/', {
   delay: 250
 }, () => yourCallback())
@@ -51,7 +51,7 @@ watch('my-stuff/', {
 
 The events to watch for. Default is `[ 'add', 'change', 'unlink' ]`. For more events, see the ["chokidar"](https://www.npmjs.com/package/chokidar) documentation.
 
-```
+```javascript
 watch('my-stuff/', {
   events: [ 'add', 'change', 'unlink' ]
 }, () => yourCallback())
@@ -61,7 +61,7 @@ watch('my-stuff/', {
 
 If `fireFirst` is set, the callback is triggered separately before the debounce. Default is `false`. If `fireLast` is set, the callback is triggered after the debounce. Default is `true`. Enabling both is possible, disabling both is useless.
 
-```
+```javascript
 watch('my-stuff/', {
   fireFirst: false,
   fireLast: true
