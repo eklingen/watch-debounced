@@ -1,6 +1,6 @@
 {
   "name": "@eklingen/watch-debounced",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Simple debounced file watcher. Uses Chokidar.",
   "repository": {
     "type": "git",
