@@ -29,13 +29,13 @@
     "test": "echo '** TODO: Write tests! **'; echo 'Linting...'; eslint index.js --fix;"
   },
   "dependencies": {
-    "chokidar": "^3.4.2"
+    "chokidar": "^3.5.2"
   },
   "devDependencies": {
-    "eslint": "^7.8.1",
+    "eslint": "^7.32.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prefer-object-spread": "^1.2.1",
-    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-smells": "^1.0.1"
   }
 }
