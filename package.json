@@ -29,7 +29,7 @@
     "test": "echo '** TODO: Write tests! **'; echo 'Linting...'; eslint index.js --fix;"
   },
   "dependencies": {
-    "chokidar": "^3.5.2"
+    "chokidar": "^3.5.3"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
