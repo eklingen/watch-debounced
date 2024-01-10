@@ -7,22 +7,24 @@ const DEFAULT_OPTIONS = {
   fireLast: true,
   chokidarOptions: {
     ignoreInitial: true,
-    followSymlinks: false
-  }
+    followSymlinks: false,
+  },
 }
 
-function watch (paths = [], options = {}, callback = () => {}) {
+function watch(paths = [], options = {}, callback = () => {}) {
   options = { ...DEFAULT_OPTIONS, ...options }
 
   const chokidar = require('chokidar')
   const watcher = chokidar.watch(paths, options.chokidarOptions)
 
-  const debounceEvent = (callback, time = DEFAULT_OPTIONS.delay, interval) => (...args) => {
-    clearTimeout(interval)
-    interval = setTimeout(() => options.fireLast ? callback(...args) : () => {}, time)
-  }
+  const debounceEvent =
+    (callback, time = DEFAULT_OPTIONS.delay, interval) =>
+    (...args) => {
+      clearTimeout(interval)
+      interval = setTimeout(() => (options.fireLast ? callback(...args) : () => {}), time)
+    }
 
-  function onChange (event, path, stats, error) {
+  function onChange(event, path, stats, error) {
     if (error && watcher.listenerCount('error')) {
       watcher.emit('error', error)
       return
